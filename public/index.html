@@ -49,7 +49,7 @@
                     console.log(res.data)
             })
             .catch((err) => console.log(err));
-            rollbar.critical('Crash while calling bad function');
+            rollbar.error('Crash while calling bad function');
         }
 
         document.getElementById("jokeButton").onclick = function() {

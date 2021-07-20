@@ -46,8 +46,9 @@ app.post("/api/pet", (req, res) => {
 app.get('/api/pets', (req, res) => {
     console.log('calling broken function')
     petWork()
-    rollbar.critical(`Crash on account of bad function`)
+    rollbar.error(`Crash on account of bad function`)
     res.status(400).send({error: 'function does not exist'})
+    rollbar.error(`Crash on account of bad function`)
 })
 
 const port = process.env.PORT || 4545;
