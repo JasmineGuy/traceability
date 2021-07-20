@@ -43,11 +43,9 @@ app.post("/api/pet", (req, res) => {
   }
 });
 
-app.post('/api/pets', (req, res) => {
-    petWork()
-    rollbar.error(`Crash on account of bad function`)
-    res.status(400).send({error: 'function does not exist'})
-    rollbar.error(`Crash on account of bad function`)
+app.post('/api/studentDesk', (req, res) => {
+    let dog = res.addTrailers
+    rollbar.error('didnt work')
 })
 
 
