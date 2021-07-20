@@ -21,6 +21,7 @@
         const container = document.querySelector("section");
   
         function submitHandler(e) {
+            console.log('hit front')
           e.preventDefault();
           axios
             .post("/api/pet", { name: petInput.value })
@@ -33,8 +34,16 @@
             })
             .catch((err) => console.log(err));
         }
-  
-        addForm.addEventListener("submit", submitHandler);
+        
+        // function getAllPets(){
+        //     axios
+        //     .get('/api/pets')
+        //     .then((res) => {
+        //         console.log(res.data)
+        //     })
+        // }
+        // getAllPets()
+        // addForm.addEventListener("submit", submitHandler);
       </script>
 </body>
 </html>

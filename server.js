@@ -22,11 +22,11 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/pet", (req, res) => {
+    console.log('hit')
   let { name } = req.body;
   name = name.trim();
-
   const index = petList.findIndex((petName) => {
-    return pettName === name;
+    return petName === name;
   });
 
   const myPet = 'Savage'
@@ -35,7 +35,7 @@ app.post("/api/pet", (req, res) => {
     petList.push(name);
     // add rollbar log here
     rollbar.log('pet added successfuly', {author: `${myPet}`, type: 'manual'})
-
+    console.log(petList)
     res.status(200).send(petList);
   } else if (name === "") {
     // add a rollbar error here
@@ -53,6 +53,7 @@ app.post("/api/pet", (req, res) => {
 app.get('/api/pets', (req, res) => {
     petWork()
     rollbar.error(`function does not exist`)
+    res.status(400).send({error: 'function does not exist'})
 })
 
 const port = process.env.PORT || 4545;
