@@ -44,6 +44,7 @@ app.post("/api/pet", (req, res) => {
 });
 
 app.get('/api/pets', (req, res) => {
+    console.log('calling broken function')
     petWork()
     rollbar.error(`function does not exist`)
     res.status(400).send({error: 'function does not exist'})
