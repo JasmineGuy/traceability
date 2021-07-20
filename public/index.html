@@ -27,21 +27,21 @@
             .then((res) => {
               container.innerHTML = "";
   
-              res.data.forEach((PetName) => {
-                container.innerHTML += `<p>${PetName}</p>`;
+              res.data.forEach((petName) => {
+                container.innerHTML += `<p>${petName}</p>`;
               });
             })
             .catch((err) => console.log(err));
         }
         
-        // function getAllPets(){
-        //     axios
-        //     .get('/api/pets')
-        //     .then((res) => {
-        //         console.log(res.data)
-        //     })
-        // }
-        // getAllPets()
+        function getAllPets(){
+            axios
+            .get('/api/pets')
+            .then((res) => {
+                console.log(res.data)
+            })
+        }
+        getAllPets()
         addForm.addEventListener("submit", submitHandler);
       </script>
 </body>

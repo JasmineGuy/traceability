@@ -32,19 +32,13 @@ app.post("/api/pet", (req, res) => {
 
   if (index === -1 && name !== "") {
     petList.push(name);
-    // add rollbar log here
     rollbar.log('pet added successfully')
-    console.log(petList)
     res.status(200).send(petList);
   } else if (name === "") {
-    // add a rollbar error here
     rollbar.error('no name given')
-
     res.status(400).send({ error: "no name was provided" });
   } else {
-    // add a rollbar error here too
     rollbar.error('pet already exists')
-
     res.status(400).send({ error: "that pet already exists" });
   }
 });
@@ -57,6 +51,5 @@ app.get('/api/pets', (req, res) => {
 
 const port = process.env.PORT || 4545;
 
-// add rollbar errorHandler middleware here
 
 app.listen(port, () => console.log(`server running on port ${port}`));
