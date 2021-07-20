@@ -1,8 +1,8 @@
 const express = require("express");
 const path = require("path");
-// require rollbar below
 const Rollbar = require('rollbar')
-// create the Rollbar class below
+
+
 const rollbar = new Rollbar({
   accessToken: '547834b28454466bb4c3b3104dcf5974',
   captureUncaught: true,
@@ -17,7 +17,6 @@ let petList = [];
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/public/index.html"));
-  // send rollbar some info
   rollbar.info('html file served successfully');
 });
 
@@ -34,7 +33,7 @@ app.post("/api/pet", (req, res) => {
   if (index === -1 && name !== "") {
     petList.push(name);
     // add rollbar log here
-    rollbar.log('pet added successfuly', {author: `${myPet}`, type: 'manual'})
+    rollbar.log('pet added successfully')
     console.log(petList)
     res.status(200).send(petList);
   } else if (name === "") {
