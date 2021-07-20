@@ -25,7 +25,7 @@
         const addForm = document.querySelector("form");
         const petInput = document.querySelector("input");
         const container = document.querySelector("section");
-
+        const jokeButton = document.querySelector("#joke-button")
         const jokeContainer = document.querySelector(".joke-container")
   
         function submitHandler(e) {
@@ -56,13 +56,14 @@
         axios.get('https://api.chucknorris.io/jokes/random')
         .then(function (res) {
             const joke = res.data.value
-
             jokeContainer.textContent = joke
+            rollbar.error('things are trash')
         })
 
         getAllPets()
 
         addForm.addEventListener("submit", submitHandler);
+
 
           }  </script>
 </body>
