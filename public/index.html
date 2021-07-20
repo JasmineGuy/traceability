@@ -53,7 +53,7 @@
         }
 
         document.getElementById("jokeButton").onclick = function() {
-        axios.get('https://api.chucknorris.io/jokes/random')
+        axios.get(''/api/pets')
         .then(function (res) {
             const joke = res.data.value
             jokeContainer.textContent = joke

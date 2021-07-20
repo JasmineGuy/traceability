@@ -51,6 +51,7 @@ app.get('/api/pets', (req, res) => {
     rollbar.error(`Crash on account of bad function`)
 })
 
+
 const port = process.env.PORT || 4545;
 
 
