@@ -30,6 +30,7 @@ app.post("/api/pet", (req, res) => {
   });
 
   const myPet = 'Savage'
+
   if (index === -1 && name !== "") {
     petList.push(name);
     // add rollbar log here
@@ -49,7 +50,7 @@ app.post("/api/pet", (req, res) => {
   }
 });
 
-app.get('/api/pet', () => {
+app.get('/api/pets', (req, res) => {
     petWork()
     rollbar.error(`function does not exist`)
 })
