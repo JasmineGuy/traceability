@@ -54,6 +54,7 @@
         // }
 
         function buttonHandler(e) {
+            console.log('button clicked')
         axios 
           .post("/api/studentDesk", { name: nameInput.value })
           .then((res) => {
