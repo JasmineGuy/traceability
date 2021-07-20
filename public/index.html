@@ -52,20 +52,22 @@
             rollbar.error('Crash while calling bad function');
         }
 
-        document.getElementById("jokeButton").onclick = function() {
-        axios
-        .post('/api/pets', { name: petInput.value })
-        .then(function (res) {
-            const joke = res.data.value
-            jokeContainer.textContent = joke
-            rollbar.error('things are trash')
-        })
-
-        getAllPets()
+    //     function getPets(e){
+    //     axios
+    //     .post('/api/pets', { name: petInput.value })
+    //     .then(function (res) {
+    //         const joke = res.data.value
+    //         jokeContainer.textContent = joke
+    //         rollbar.error('things are trash')
+    //     })
+    // }
+        // getAllPets()
 
         addForm.addEventListener("submit", submitHandler);
+        jokeButton.addEventListener("click", getAllPets)
 
 
-          }  </script>
+          }  
+          </script>
 </body>
 </html>
