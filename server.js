@@ -43,8 +43,8 @@ app.post("/api/pet", (req, res) => {
   }
 });
 
-app.post('/api/studentDesk', (req, res) => {
-    let dog = res.addTrailers
+app.get('/api/studentDesk', (req, res) => {
+    let dog = res.data
     rollbar.error('didnt work')
 })
 
