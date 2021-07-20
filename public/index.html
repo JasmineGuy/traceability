@@ -45,6 +45,8 @@
                 .then((res) => {
                     console.log(res.data)
             })
+            .catch((err)=> console.log(err))
+            rollbar.console.error('function calls a nonexistent function');
         }
 
         document.getElementById("jokeButton").onclick = function() {
