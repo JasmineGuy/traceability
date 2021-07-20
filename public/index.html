@@ -50,16 +50,15 @@
         document.getElementById("jokeButton").onclick = function() {
         axios.get('https://api.chucknorris.io/jokes/random')
         .then(function (res) {
-            console.log(res.data.value)
             const joke = res.data.value
 
             jokeContainer.textContent = joke
-        }
+        })
 
         getAllPets()
 
         addForm.addEventListener("submit", submitHandler);
 
-      </script>
+          }  </script>
 </body>
 </html>
